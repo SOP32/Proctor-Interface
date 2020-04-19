@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ISD project</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheet -->
+    
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="/style.css">  
+    
+    
+    
+    
+    <!-- import the webpage's javascript file -->
+    <script type="text/javascript" src="/script.js"></script>
+  </head>  
+  <body>
+    <!--//////////////////////// the navbar declaration code.-->
+	  
+		<!-- Just an image -->
+<nav class="navbar fixed-top navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://cdn.glitch.com/df4f0e7d-eed6-4f54-9c96-188840def92f%2FUniversity_of_Pittsburgh_Logo_CMYK_Secondary_Reverse_2-Color.png?v=1586990991716" width="12%" alt="">
+  </a>
+</nav>
+
+<!--////////////////////////////////////////////////-->
+    <br><br><br><br>
+   
+  <div class="container">
+    
+  <div class="alert alert-primary" role="alert">
+  <h4 class="alert-heading"><b>Course</b> : CS 0007 Introduction To Computer Programming</h4>
+    <hr>
+  <p><b>Week 4</b> : Arrays and ArrayList<br>
+    <div id="date">
+    <b>Date </b> : 
+    
+      <script>
+        getTodaysDate();
+      </script>
+    </div> <br></p>
+</div>
+    <br>
+    
+    <div class="row">
+      <div class="col">
+          
+
+    <!--------------------GRAPH POP UP------------------------------------------------------------------------------------------------------------->    
+    
+    <!-- Trigger the modal with a button -->
+    <button type="button" class="btn1 btn-info btn-lg" data-toggle="modal" data-target="#myModal">View Graph</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" style="text-align: center">
+          <h2>Class Progress</h2>    
+          <div id="piechart"></div>
+
+          <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+          <script type="text/javascript">
+
+          google.charts.load('current', {'packages':['corechart']});
+          google.charts.setOnLoadCallback(drawChart);
+
+          // Draw the chart and set the chart values
+          function drawChart() {
+          var data = google.visualization.arrayToDataTable([
+          ['Exercise', 'Progress'],
+          ['Exercise 1', 72],
+          ['Exercise 2', 48],
+          ['Exercise 3', 12],
+          ['Exercise 4', 44],
+          ['Exercise 5', 16]
+          ]);
+
+          //Set the width and height of the chart
+          var options = {width:550, height:400, pieSliceText:'none'};
+
+          // Display the chart inside the <div> element with id="piechart"
+          var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+          chart.draw(data,options);
+          }
+          </script>
+        </div>
+      </div>
+    </div>
+    </div>
+    <br> <br>    
+    
+<!------------------------------------------------------------------------------------------------------------------------------------------------>        
+    <button class="button-main" onclick="myFunctionShowAll()">Show All</button>
+    <button class="button-main button1" onclick="myFunctionCompleted()">Completed</button>
+    <button class="button-main button6" onclick="myFunctionIncomplete()">Incomplete</button>    
+    <button class="button-main button2" onclick="myFunctionInProgress()">In Progress</button>
+    <button class="button-main button3" onclick="myFunctionError()">Error</button>
+    <button class="button-main button4" onclick="myFunctionUnoccupied()">Unoccupied</button>
+    <button class="button-main button5" onclick="myFunctionUnattempted()">Unattempted</button>
+        
+    <div class="grid-container-dash">
+      <div class="row">
+        <div class="col">
+          <div class="grid-item-qs">Ex1</div>
+          <div class="grid-item-qs">Ex2</div>
+          <div class="grid-item-qs">Ex3</div>
+          <div class="grid-item-qs">Ex4</div>
+          <div class="grid-item-qs">Ex5</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="1A" class="col">
+          <div class="grid-item-unoccupied" title="unoccupied">1A</div>
+          <div class="grid-item-unoccupied" title="unoccupied">1A</div>
+          <div class="grid-item-unoccupied" title="unoccupied">1A</div> 
+          <div class="grid-item-unoccupied" title="unoccupied">1A</div>
+          <div class="grid-item-unoccupied" title="unoccupied">1a</div>
+          <div class="grid-item-label">1A</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="2A" class="col">
+          <div class="grid-item-completed" title="completed">2A</div>
+          <div class="grid-item-inprogress" title="in progress">2A</div>
+          <div class="grid-item-error" title="error">2A</div> 
+          <div class="grid-item-completed" title="completed">2A</div>
+          <div class="grid-item-unattempted" title="unattempted">2A</div>
+          <div class="grid-item-label">2A</div>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div  id="3A" class="col">
+          <div class="grid-item-completed" title="completed">3a</div>
+          <div class="grid-item-completed" title="completed">3a</div>
+          <div class="grid-item-inprogress" title="in progress">3a</div> 
+          <div class="grid-item-unattempted" title="unattempted">3a</div>
+          <div class="grid-item-completed" title="completed">3a</div>
+          <div class="grid-item-label">3A</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="4A" class="col">
+          <div class="grid-item-completed" title="completed">4A</div>
+          <div class="grid-item-inprogress" title="in progress">4A</div>
+          <div class="grid-item-error" title="error">4A</div> 
+          <div class="grid-item-completed" title="completed">4A</div>
+          <div class="grid-item-error" title="error">4A</div> 
+          <div class="grid-item-label">4A</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="5A" class="col">
+          <div class="grid-item-completed" title="completed">5A</div>
+          <div class="grid-item-unattempted" title="unattempted">5A</div>
+          <div class="grid-item-inprogress" title="in progress">5A</div>
+          <div class="grid-item-error" title="error">5A</div> 
+          <div class="grid-item-unattempted" title="unattempted">5A</div>
+          <div class="grid-item-label">5A</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="1B" class="col">
+          <div class="grid-item-unoccupied" title="unoccupied">1B</div>
+          <div class="grid-item-unoccupied" title="unoccupied">1B</div>
+          <div class="grid-item-unoccupied" title="unoccupied">1B</div> 
+          <div class="grid-item-unoccupied" title="unoccupied">1B</div>
+          <div class="grid-item-unoccupied" title="unoccupied">1B</div>
+          <div class="grid-item-label">1B</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="2B" class="col">
+          <div class="grid-item-inprogress" title="in progress">2B</div>
+          <div class="grid-item-completed" title="completed">2B</div>
+          <div class="grid-item-inprogress" title="in progress">2B</div>
+          <div class="grid-item-completed" title="completed">2B</div>
+          <div class="grid-item-error" title="error">2B</div> 
+          <div class="grid-item-label">2B</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="3B" class="col">
+          <div class="grid-item-completed" title="completed">3A</div>
+          <div class="grid-item-unattempted" title="unattempted">3A</div>
+          <div class="grid-item-unattempted" title="unattempted">3A</div>
+          <div class="grid-item-completed" title="completed">3A</div>
+          <div class="grid-item-unattempted" title="unattempted">3A</div>
+          <div class="grid-item-label">3A</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="4B" class="col">
+          <div class="grid-item-completed" title="completed">4B</div>
+          <div class="grid-item-completed" title="completed">4B</div>
+          <div class="grid-item-error" title="error">4B</div> 
+          <div class="grid-item-completed" title="completed">4B</div>
+          <div class="grid-item-completed" title="completed">4B</div>
+          <div class="grid-item-label">4B</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="5B" class="col">
+          <div class="grid-item-inprogress" title="in progress">5B</div>
+          <div class="grid-item-error" title="error">5B</div> 
+          <div class="grid-item-inprogress" title="in progress">5B</div>
+          <div class="grid-item-completed" title="completed">5B</div>
+          <div class="grid-item-inprogress" title="in progress">5B</div>
+          <div class="grid-item-label">5B</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="1C" class="col">
+          <div class="grid-item-completed" title="completed">1C</div>
+          <div class="grid-item-completed" title="completed">1C</div>
+          <div class="grid-item-error" title="error">1C</div> 
+          <div class="grid-item-inprogress" title="in progress">1C</div>
+          <div class="grid-item-unattempted" title="unattempted">1C</div>
+          <div class="grid-item-label">1C</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="2C" class="col">
+          <div class="grid-item-completed" title="completed">2C</div>
+          <div class="grid-item-completed" title="completed">2C</div>
+          <div class="grid-item-inprogress" title="in progress">2C</div>
+          <div class="grid-item-inprogress" title="in progress">2C</div>
+          <div class="grid-item-inprogress" title="in progress">2C</div>
+          <div class="grid-item-label">1C</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="3C" class="col">
+          <div class="grid-item-completed" title="completed">3C</div>
+          <div class="grid-item-inprogress" title="in progress">3C</div>
+          <div class="grid-item-completed" title="completed">3C</div>
+          <div class="grid-item-completed" title="completed">3C</div>
+          <div class="grid-item-unattempted" title="unattempted">3C</div>
+          
+          <div class="grid-item-label">3C</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="4C" class="col">
+          <div class="grid-item-error" title="error">4C</div>
+          <div class="grid-item-completed" title="completed">4C</div>
+          <div class="grid-item-unattempted" title="unattempted">4C</div>
+          <div class="grid-item-inprogress" title="in progress">4C</div>
+          <div class="grid-item-completed" title="completed">4C</div>
+          
+          <div class="grid-item-label">4C</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="5C" class="col">
+          <div class="grid-item-completed" title="completed">5C</div> 
+          <div class="grid-item-inprogress" title="in progress">5C</div>
+          <div class="grid-item-error" title="error">5C</div>
+          <div class="grid-item-completed" title="completed">5C</div> 
+          <div class="grid-item-completed" title="completed">5C</div> 
+          
+          <div class="grid-item-label">5C</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="1D" class="col">
+          <div class="grid-item-completed" title="completed">1D</div>
+          <div class="grid-item-completed" title="completed">1D</div>
+          <div class="grid-item-unattempted" title="unattempted">1D</div>
+          <div class="grid-item-unattempted" title="unattempted">1D</div>
+          <div class="grid-item-unattempted" title="unattempted">1D</div>
+          <div class="grid-item-label">1D</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="2D" class="col">
+          <div class="grid-item-completed" title="completed">2D</div>
+          <div class="grid-item-inprogress" title="in progress">2D</div>
+          <div class="grid-item-completed" title="completed">2D</div>
+          <div class="grid-item-error" title="error">2D</div>
+          <div class="grid-item-unattempted" title="unattempted">2D</div>
+          <div class="grid-item-label">2D</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="3D" class="col">
+          <div class="grid-item-completed" title="completed">3D</div>
+          <div class="grid-item-completed" title="completed">3D</div>
+          <div class="grid-item-inprogress" title="in progress">3D</div>
+          <div class="grid-item-error" title="error">3D</div>
+          <div class="grid-item-inprogress" title="in progress">3D</div>
+          <div class="grid-item-label">3D</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="4D" class="col">
+          <div class="grid-item-completed" title="completed">4D</div>
+          <div class="grid-item-completed" title="completed">4D</div>
+          <div class="grid-item-unattempted" title="unattempted">4D</div>
+          <div class="grid-item-inprogress" title="in progress">4D</div>
+          <div class="grid-item-inprogress" title="in progress">4D</div>
+          <div class="grid-item-label">4D</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="5D" class="col">
+          <div class="grid-item-inprogress" title="in progress">5D</div>
+          <div class="grid-item-completed" title="completed">5D</div>
+          <div class="grid-item-inprogress" title="in progress">5D</div>
+          <div class="grid-item-inprogress" title="in progress">5D</div>
+          <div class="grid-item-unattempted" title="unattempted">4D</div>
+          <div class="grid-item-label">5D</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="1E" class="col">
+          <div class="grid-item-completed" title="completed">1E</div>
+          <div class="grid-item-inprogress" title="in progress">1E</div>
+          <div class="grid-item-error" title="error">3D</div>
+          <div class="grid-item-completed" title="completed">1E</div>
+          <div class="grid-item-unattempted" title="unattempted">1E</div>
+          <div class="grid-item-label">1E</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="2E" class="col">
+          <div class="grid-item-error" title="error">2E</div>
+          <div class="grid-item-error" title="error">2E</div>
+          <div class="grid-item-inprogress" title="in progress">2E</div>
+          <div class="grid-item-completed" title="completed">2E</div>
+          <div class="grid-item-unattempted" title="unattempted">2E</div>
+          <div class="grid-item-label">2E</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="3E" class="col">
+          <div class="grid-item-completed" title="completed">3E</div>
+          <div class="grid-item-inprogress" title="in progress">3E</div>
+          <div class="grid-item-completed" title="completed">3E</div>
+          <div class="grid-item-completed" title="completed">3E</div>
+          <div class="grid-item-unattempted" title="unattempted">3E</div>
+          
+          <div class="grid-item-label">3E</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="4E" class="col">
+          <div class="grid-item-completed" title="completed">4E</div>
+          <div class="grid-item-completed" title="completed">4E</div>
+          <div class="grid-item-inprogress" title="in progress">4E</div>
+          <div class="grid-item-unattempted" title="unattempted">4E</div>
+          <div class="grid-item-unattempted" title="unattempted">4E</div>
+          
+          <div class="grid-item-label">4E</div>
+        </div>
+      </div>
+      <div class="row">
+        <div  id="5E" class="col">
+          <div class="grid-item-completed" title="completed">5E</div>
+          <div class="grid-item-completed" title="completed">5E</div>
+          <div class="grid-item-error" title="error">5E</div>
+          <div class="grid-item-error" title="error">5E</div>
+          <div class="grid-item-inprogress" title="in progress">5E</div>
+          <div class="grid-item-label">5E</div>
+        </div>
+      </div>
+    </div>
+    
+      </div></div>
+    <br><br>
+    
+    
+    
+    <div class="row">
+    <div class="col">
+      <h3 align="center">
+        Class View
+        <button type="button" 
+                class="btn btn-lg" 
+                data-toggle="popover" 
+                title="Class View Grid" 
+                data-content="This grid represents the class view. 
+                              Each cell is a seat with the seat number and student Pitt ID.
+                              Lighter green shade means 0% progress and darker green shade means more progress. 
+                              Hovering on call you can see the progress value of the student.">
+          <img src="https://cdn.glitch.com/fd20b87a-5aad-4b59-8629-631cb46f4a7c%2Fhelp-icon.png?v=1587062850375" 
+             width="30px" title="Help" alt="Help"></button>
+        
+      </h3>
+      <div class="grid-container-class">
+  <button id="seat_1A" class="button-seat" onclick="colorExercise(this.id)">1A Unoccupied</button>
+      <a href="home.html">
+        <button id="seat_2A" class="button-seat occupied" onclick="setSeatNumber(this.id)">
+          2A DIN10
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_3A" class="button-seat occupied" onclick="setSeatNumber(this.id)">3A ABC12
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_4A" class="button-seat occupied" onclick="setSeatNumber(this.id)">4A TJS89
+        </button>
+      </a>
+      <a href="panic-home.html">
+        <button id="seat_5A" class="button-seat panic" title="Panic button clicked!" onclick="setSeatNumber(this.id)">5A SRK88
+          <span class="badge badge-light">!</span>
+        </button>
+      </a>
+      <button id="seat_1B" class="button-seat">1B Unoccupied</button>
+      <a href="home.html">
+        <button id="seat_2B" class="button-seat occupied" onclick="setSeatNumber(this.id)">2B PLT35
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_3B" class="button-seat occupied" onclick="setSeatNumber(this.id)">3B SAJ45
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_4B" class="button-seat occupied" onclick="setSeatNumber(this.id)">4B PBS50
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_5B" class="button-seat occupied" onclick="setSeatNumber(this.id)">5B KS34
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_1C" class="button-seat occupied" onclick="setSeatNumber(this.id)">1C SOP32
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_2C" class="button-seat occupied" onclick="setSeatNumber(this.id)">2C WES29
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_3C" class="button-seat occupied" onclick="setSeatNumber(this.id)">3C JCO137
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_4C" class="button-seat occupied" onclick="setSeatNumber(this.id)">4C HYB48
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_5C" class="button-seat occupied" onclick="setSeatNumber(this.id)">5C DJS24
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_1D" class="button-seat occupied" onclick="setSeatNumber(this.id)">1D XHN63
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_2D" class="button-seat occupied" onclick="setSeatNumber(this.id)">2D AIV5
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_3D" class="button-seat occupied" onclick="setSeatNumber(this.id)">3D WXI26
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_4D" class="button-seat occupied" onclick="setSeatNumber(this.id)">4D OJ39
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_5D" class="button-seat occupied" onclick="setSeatNumber(this.id)">5D SAB13
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_1E" class="button-seat occupied" onclick="setSeatNumber(this.id)">1E DAN61
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_2E" class="button-seat occupied" onclick="setSeatNumber(this.id)">2E MKB27
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_3E" class="button-seat occupied" onclick="setSeatNumber(this.id)">3E LJ56
+          </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_4E" class="button-seat occupied" onclick="setSeatNumber(this.id)">4E BGC15
+        </button>
+      </a>
+      <a href="home.html">
+        <button id="seat_5E" class="button-seat occupied" onclick="setSeatNumber(this.id)">5E PKS75
+        </button>
+      </a>
+  </div> 
+      
+    </div>
+      <script>
+        colorSeat();
+      </script>
+    </div>
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+  </div>
+<script type="text/javascript" src="/script.js"></script>
+  </body>
+</html>
