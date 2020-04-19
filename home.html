@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<!--The Usual Bootstrap class refences and calls-->
+<head>
+	<title>Proctor</title>
+
+	<!--Important declartions and href to bootstrap.min.css class file which stores all bootstrap classes --> 
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0"> 
+	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- For referencing the custom.css file which has some new declarations and written after previous href for priority -->
+	<link rel="stylesheet" type="text/css" href="/style.css"> 
+<script type="text/javascript" src="/script.js"></script>
+</head>
+
+
+<body>
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src = "https://code.jquery.com/jquery.js"></script>
+<!--//////////////////////////////////////////////////-->
+
+
+<!--//////////////////////// the navbar declaration code.-->
+	<nav class="navbar fixed-top navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+    <img src="https://cdn.glitch.com/df4f0e7d-eed6-4f54-9c96-188840def92f%2FUniversity_of_Pittsburgh_Logo_CMYK_Secondary_Reverse_2-Color.png?v=1586990991716" width="15%" alt="">
+  </a>
+</nav>
+
+<!--////////////////////////////////////////////////-->
+
+
+
+	<!--	<?php
+//////////////////////////// for connecting to server. /////////////////////////////
+
+// 		ini_set('display_errors', 1); //for error handling, generally isn't needed
+// 		error_reporting(E_ALL);
+
+// 		try {
+// 		$connect = new PDO('pgsql:host=127.0.0.1; dbname=shoesurgeon2' , 'ompatel', 'Omanivaid123');
+// 		}catch(PDOException $e) {
+//                 echo 'Exception occurred: ' . $e->getMessage();
+//             }
+
+// 		//This condition is in case the is some error in connection to the database.
+// 		if(!$connect){
+// 			die('Cannot connect to database');
+// 		}
+// ////////////////////////////////////////////////////////////////////////////////////
+// 		$default_num_rows = 25; //For printing 25 columns by default
+
+		?> -->
+		
+	<br><br><br><br><br><br>
+  
+    
+	<div class="container">
+    
+    <div class="alert alert-primary" role="alert">
+      <h4 class="alert-heading"><b>Course</b> : CS 0007 Introduction To Computer Programming</h4>
+      <hr>
+      <p>
+        <b>Student Name</b>: Dilisha Naidu<br>
+        <b>Student ID</b>: DIN10<br>
+        <b>Seat</b> : 2A<br>
+        </p>
+      </div>
+      
+     <br><br>
+		<div class="row">
+		  	<div class="col-sm-6">
+		    	<div class="card">
+		      		<div class="card-body">
+				        <h4><b>Exercise 1</b></h4>
+						    <h5>Short Description or Problem statement of the exercise in display.</h5>
+                <h6 class="progress-label">Completion %:</h6>
+                <div class="progress">
+                  <div id="exercise_1" class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                  </div>
+                </div>
+                <br>
+                <table>
+                  <tr>
+                    <td><h6>Weighted Score:</h6></td>
+                    <td><h6>7/10</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Attempts:</h6></td>
+                    <td><h6>3</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Time Spent (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Average Class Time (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                </table>
+		      		</div>
+		    	</div>
+		  	</div>
+		    <div class="col-sm-6">
+		    	<div class="card">
+		      	<div class="card-body">
+              <h4><b>Exercise 2</b></h4>
+              <h5>Short Description or Problem statement of the exercise in display.</h5>
+              <h6 class="progress-label">Completion %:</h6>
+              <div class="progress">
+                <div id="exercise_2" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                </div>
+              </div>
+              <br>
+              <table>
+                <tr>
+                  <td><h6>Weighted Score:</h6></td>
+                  <td><h6>7/10</h6></td>
+                </tr>
+                <tr>
+                  <td><h6>Attempts:</h6></td>
+                  <td><h6>3</h6></td>
+                </tr>
+                <tr>
+                  <td><h6>Time Spent (m):</h6></td>
+                  <td><h6>6</h6></td>
+                </tr>
+                <tr>
+                  <td><h6>Average Class Time (m):</h6></td>
+                  <td><h6>6</h6></td>
+                </tr>
+              </table>
+		      	</div>
+		    	</div>
+		  	</div>
+		</div>
+		<br>
+
+		<div class="row">
+		  	<div class="col-sm-6">
+		    	<div class="card">
+		      		<div class="card-body">
+				        <h4><b>Exercise 3</b></h4>
+                <h5>Short Description or Problem statement of the exercise in display.</h5>
+                <h6 class="progress-label">Completion %:</h6>
+                <div class="progress">
+                  <div id="exercise_3" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                  </div>
+                </div>
+                <br>
+                <table>
+                  <tr>
+                    <td><h6>Weighted Score:</h6></td>
+                    <td><h6>7/10</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Attempts:</h6></td>
+                    <td><h6>3</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Time Spent (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Average Class Time (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                </table>
+              </div>
+		    	</div>
+		  	</div>
+		  	<div class="col-sm-6">
+		    	<div class="card">
+		      		<div class="card-body">
+				        <h4><b>Exercise 4</b></h4>
+						    <h5>Short Description or Problem statement of the exercise in display.</h5>
+                  <h6 class="progress-label">Completion %:</h6>
+                  <div class="progress">
+                    <div id="exercise_4" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                    </div>
+                  </div>
+                <br>
+                <table>
+                  <tr>
+                    <td><h6>Weighted Score:</h6></td>
+                    <td><h6>7/10</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Attempts:</h6></td>
+                    <td><h6>3</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Time Spent (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Average Class Time (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                </table>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+		<br>
+		<div class="row">
+		  	<div class="col-sm-6">
+		    	<div class="card">
+		      		<div class="card-body">
+				        <h4><b>Exercise 5</b></h4>
+                <h5>Short Description or Problem statement of the exercise in display.</h5>
+                <h6 class="progress-label">Completion %:</h6>
+                <div class="progress">
+                  <div id="exercise_5" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+                  </div>
+                </div>
+                <br>
+                <table>
+                  <tr>
+                    <td><h6>Weighted Score:</h6></td>
+                    <td><h6>7/10</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Attempts:</h6></td>
+                    <td><h6>3</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Time Spent (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                  <tr>
+                    <td><h6>Average Class Time (m):</h6></td>
+                    <td><h6>6</h6></td>
+                  </tr>
+                </table>
+		      		</div>
+		    	</div>
+		  	</div>
+		</div>
+	</div>
+  <script>colorExercise();</script>
+  <script type="text/javascript" src="/script.js"></script>
+	</body>
+	</html>
+
+
+
